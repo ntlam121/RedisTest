@@ -93,6 +93,13 @@ def lstBdiffA_processing(lstBdiffA):
         logging.critical(e, exc_info=True)
 
 
+def intersection(lst1, lst2):
+    # Use of hybrid method
+    temp = set(lst2)
+    lst3 = [value for value in lst1 if value in temp]
+    return lst3
+
+
 def main1():
     try:
         global lstA, lstB, lstAdiffB, lstBdiffA, lstAintersectionB
@@ -116,7 +123,10 @@ def main1():
         logging.info(f"lstBdiffA: {len(lstBdiffA)}")
 
         ###Bước 3: lấy lstAintersectionB
-        lstAintersectionB = [item for item in lstA if item in lstB]
+        if (len(lstA) == len(lstB) and len(lstAdiffB) == 0 and len(lstBdiffA) == 0):
+            lstAintersectionB = lstA
+        else:
+            lstAintersectionB = intersection(lstA, lstB)
         logging.info(f"lstAintersectionB: {len(lstAintersectionB)}")
 
         ###Bước 4: quét lstAdiffB và gửi new + cập nhật vào hash ne_pm_alarm
