@@ -1,6 +1,9 @@
 import random
 import sys
 
+# totalRecord = 10
+totalRecord = 7000000
+
 
 def gen_redis_proto(cmd):
     # break the command by spaces to get the number of tokens
@@ -14,7 +17,7 @@ def gen_redis_proto(cmd):
 
 def createFile():
     with open("ne_command.txt", 'w', encoding='utf-8') as f:
-        for i in range(1, 7000000):
+        for i in range(1, totalRecord):
             #-----------pm
             lastTime = random.randint(0, 9)
             #hset hash

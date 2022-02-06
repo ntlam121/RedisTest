@@ -23,11 +23,11 @@ hats = {f"hat:{random.getrandbits(32)}": i for i in (
         "quantity": 200,
         "npurchased": 0,
     })
-}
+        }
 
-print(hats.items())
-for xuaaa, hat in hats.items():
-    print("{} {}".format(xuaaa, hat))
+# print(hats.items())
+# for xuaaa, hat in hats.items():
+#     print("{} {}".format(xuaaa, hat))
 
 
 def insertHash_ne(i, pm_or_fm) -> None:
@@ -40,4 +40,15 @@ def insertHash_ne(i, pm_or_fm) -> None:
     }
     print(type(ne))
     print(ne.items())
-insertHash_ne(100,"pm")
+
+list1 = [1, 2,2, 4]
+list2 = []
+
+# list_difference = [item for item in list1 if item not in list2]
+set_difference = set(list1) - set(list2)
+list_difference = list(set_difference)
+set_difference2 = set(list2) - set(list1)
+list_difference2 = list(set_difference2)
+
+print(list_difference)
+print(list_difference2)
